@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "./",
   "main": "./electron/main.js",
+  "repository": "https://github.com/TolaMironcenko/duty_react_electron.git",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -11,6 +12,7 @@
     "concurrently": "^7.6.0",
     "electron": "^22.0.0",
     "electron-builder": "^23.6.0",
+    "electron-forge": "^5.2.4",
     "electron-is-dev": "^2.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -25,7 +27,14 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "ebuild": "npm run build && node_modules/.bin/build"
+    "ebuild": "npm run build"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "icon": "./electron/data/img/electron.png"
+      }
+    }
   },
   "eslintConfig": {
     "extends": [
@@ -44,5 +53,14 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.4",
+    "@electron-forge/maker-deb": "^6.0.3",
+    "@electron-forge/maker-dmg": "^6.0.3",
+    "@electron-forge/maker-zip": "^6.0.3",
+    "@electron-forge/publisher-github": "^6.0.3",
+    "electron": "^21.3.1",
+    "electron-forge": "^5.2.4"
   }
 }
